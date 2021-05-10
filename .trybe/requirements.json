@@ -1,0 +1,33 @@
+{
+  "requirements": [
+    {
+      "description":"1 - Crie uma listagem de produtos",
+      "bonus": false
+    },
+    {
+      "description":"2 - Adicione o produto ao carrinho de compras",
+      "bonus": false
+    },
+    {
+      "description":"3 - Remova o item do carrinho de compras ao clicar nele",
+      "bonus": false
+    },
+    {
+      "description":"4 - Carregue o carrinho de compras através do **LocalStorage** ao iniciar a página",
+      "bonus": false
+    },
+    {
+      "description":"5 - Some o valor total dos itens do carrinho de compras de forma assíncrona" ,
+      "bonus": false
+    },
+    {
+      "description":"6 - Crie um botão para limpar carrinho de compras" ,
+      "bonus": false
+    },
+    {
+      "description":"7 - Adicione um texto de `loading` durante uma requisição à API" ,
+      "bonus": false
+    }
+  ]
+}
+
