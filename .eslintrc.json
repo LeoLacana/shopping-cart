@@ -4,7 +4,8 @@
     "no-alert": "off",
     "no-console": "off",
     "prefer-arrow-callback": "off",
-    "func-names": "off"
+    "func-names": "off",
+      "no-unused-vars": "off"
   },
   "env": {
     "browser": true
