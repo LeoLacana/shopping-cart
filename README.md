@@ -13,7 +13,7 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 ## SUMÁRIO
 
 - [Habilidades](#habilidades)
-- [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
+- [O que deverá ser desenvolvido](#o-que-será-desenvolvido)
   - [Protótipo do projeto](#protótipo-do-projeto)
 - [Data de entrega](#data-de-entrega)
 - [Como desenvolver](#como-desenvolver)
@@ -23,14 +23,14 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
   - [Execução de testes de requisito](#execução-de-testes-de-requisito)
   - [API Shopping Cart](#api-shopping-cart)
 - [Lista de requisitos](#lista-de-requisitos)
-  - [1 - Criar listagem de produtos](#1-criar-listagem-de-produtos)
-  - [2 - Adicione o produto ao carrinho de compras](#2-adicione-o-produto-ao-carrinho-de-compras)
-  - [3 - Remova o item do carrinho de compras ao clicar nele](#3-remova-o-item-do-carrinho-de-compras-ao-clicar-nele)
-  - [4 - Carregue o carrinho de compras através do **LocalStorage** ao iniciar a página](#4-carregue-o-carrinho-de-compras-através-do-LocalStorage-ao-iniciar-a-página)
-  - [5 - Some o valor total dos itens do carrinho de compras](#5-some-o-valor-total-dos-itens-do-carrinho-de-compras)
-  - [6 - Crie um botão para limpar carrinho de compras](#6-crie-um-botão-para-limpar-carrinho-de-compras)
-  - [7 - Adicionar um texto de "loading" durante uma requisição à API](#7-adicionar-um-texto-de-"loading"-durante-uma-requisição-à-api)
-- [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
+  - [1 - Criar listagem de produtos](#1---crie-uma-listagem-de-produtos)
+  - [2 - Adicione o produto ao carrinho de compras](#2---adicione-o-produto-ao-carrinho-de-compras)
+  - [3 - Remova o item do carrinho de compras ao clicar nele](#3---remova-o-item-do-carrinho-de-compras-ao-clicar-nele)
+  - [4 - Carregue o carrinho de compras através do **LocalStorage** ao iniciar a página](#4---carregue-o-carrinho-de-compras-através-do-localstorage-ao-iniciar-a-página)
+  - [5 - Some o valor total dos itens do carrinho de compras](#5---some-o-valor-total-dos-itens-do-carrinho-de-compras)
+  - [6 - Crie um botão para limpar carrinho de compras](#6---crie-um-botão-para-limpar-carrinho-de-compras)
+  - [7 - Adicionar um texto de "loading" durante uma requisição à API](#7---adicione-um-texto-de-loading-durante-uma-requisição-à-api)
+- [Instruções para entregar seu projeto](#depois-de-terminar-o-desenvolvimento)
   - [Durante o desenvolvimento](#durante-o-desenvolvimento)
   - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
   - [Revisando um Pull Request](#revisando-um-pull-request)
@@ -64,8 +64,7 @@ Seu projeto deve ter o comportamento parecido com o do gif abaixo quando finaliz
 
   - Projeto individual;
 
-  - Serão `X` dias de projeto.
-  - Data de entrega para avaliação final do projeto: `DD/MM/YYYY - 14:00h`.
+  - Data de entrega para avaliação final do projeto: `21/05/2021 - 14:00h`.
 
 ---
 
@@ -74,7 +73,7 @@ Seu projeto deve ter o comportamento parecido com o do gif abaixo quando finaliz
 ### Antes de começar a desenvolver:
 
 1. Clone o repositório
-  * `git clone https://github.com/tryber/sd-011-project-shopping-cart.git`.
+  * `git clone git@github.com:tryber/sd-011-project-shopping-cart.git`.
   * Entre na pasta do repositório que você acabou de clonar:
     * `cd sd-011-project-shopping-cart`
 
@@ -472,9 +471,9 @@ Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus co
 
   * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**;
 
-  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
+  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário** ou clique em **assign yourself**;
 
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-00`.
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-11`.
 
 Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
 
@@ -482,7 +481,7 @@ Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362
 
 ## Revisando um pull request
 
-Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os _Pull Requests_.
+Use o conteúdo sobre [Code Review](https://app.betrybe.com/course/real-life-engineer/code-review) para te ajudar a revisar os _Pull Requests_.
 
 ---
 
@@ -490,6 +489,6 @@ Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-enginee
 
 Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
 
-Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH)
+Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH#cohort_name=Turma%2011)
 
 O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
