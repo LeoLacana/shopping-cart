@@ -40,9 +40,8 @@ function createCartItemElement({ sku, name, salePrice }) {
   return li;
 }
 
-function requisitionEndPoist () {
-  
-}
+/* function requisitionEndPoist (){
+} */
 
 function searchItens() {
   const productsSelect = document.querySelector('.items');   
