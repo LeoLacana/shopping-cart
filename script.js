@@ -34,10 +34,22 @@ function removeValueLocalStorager(id) {
   localStorage.setItem('Product', cartRemove);
 }
 
+function elementPrice() {
+  return document.querySelector('.total-price');
+}
+
+function subtractionTotalPrice(priceTotal, priceProduct) {
+  const getPriceProduct = priceProduct.target.innerText.split('$');
+  const getPriceProductConverted = getPriceProduct[getPriceProduct.length - 1];
+  const elementTotalPrice = elementPrice();
+  elementTotalPrice.innerText = priceTotal - parseFloat(getPriceProductConverted);
+}
+
 function cartItemClickListener(event) {
-  const id = event.target.innerText.split(' ')[1];
+  const currentTotalPrice = elementPrice();
+  subtractionTotalPrice(currentTotalPrice.innerText, event);
+  const id = event.target.innerText.split(':')[1];
   event.target.remove();
-  console.log(event.target);
   removeValueLocalStorager(id);
 }
 
@@ -80,7 +92,27 @@ function searchItens() {
   });
 }
 
-  function addObjectCart(evento) {
+function creatTotalPrice() {
+  const elementeTotalPrice = document.createElement('p');
+  const elementePrice = document.createElement('span');
+  elementeTotalPrice.innerText = 'Preço Total: ';
+  elementePrice.className = 'total-price';
+  const elementeTittleCart = document.querySelector('.cart__title');
+  elementeTittleCart.appendChild(elementeTotalPrice);
+  elementeTotalPrice.appendChild(elementePrice);
+}
+
+function sumPrice(price) {
+  const elementTotalPrice = elementPrice();
+  if (!elementTotalPrice.innerText) {
+    elementTotalPrice.innerText = price;
+  } else {
+    const elementToralPriceConverted = parseFloat(elementTotalPrice.innerText, 10);
+    elementTotalPrice.innerText = elementToralPriceConverted + price;
+  }
+}
+
+function addObjectCart(evento) {
   const itemId = getSkuFromProductItem(evento.target.parentNode);
   const API_URL = `https://api.mercadolibre.com/items/${itemId}`;
   const myObject = {
@@ -95,6 +127,7 @@ function searchItens() {
       name: data.title,
       salePrice: data.price,
     };
+    sumPrice(data.price);
     const elementOl = document.querySelector('.cart__items');
     elementOl.appendChild(createCartItemElement(objectCart));
   });
@@ -134,4 +167,6 @@ window.onload = function onload() {
   buttonElemento.addEventListener('click', addObjectCart);  
   loadCart();
   elementButtonClear.addEventListener('click', buttonClear);
+
+  creatTotalPrice();
 };
