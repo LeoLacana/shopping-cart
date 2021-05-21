@@ -80,7 +80,7 @@ function searchItens() {
   });
 }
 
-function addObjectCart(evento) {
+  function addObjectCart(evento) {
   const itemId = getSkuFromProductItem(evento.target.parentNode);
   const API_URL = `https://api.mercadolibre.com/items/${itemId}`;
   const myObject = {
@@ -100,23 +100,26 @@ function addObjectCart(evento) {
   });
 }
 
-/* function loadCart() {
+  function loadCart() {
   const localSotageCart = localStorage.getItem('Product');
-  localSotageCart.split(',').forEach((cart) => {
-    const API_URL = `https://api.mercadolibre.com/items/${cart}`;
-    fetch(API_URL)
-    .then((response) => response.json())
-    .then((data) => {
-      const objectCart = {
-        sku: data.id,
-        name: data.title,
-        salePrice: data.price,
-      };
-      const elementOl = document.querySelector('.cart__items');
-      elementOl.appendChild(createCartItemElement(objectCart));
+  if (localSotageCart) {
+    localSotageCart.split(',').forEach((cart) => {
+      console.log(cart);
+      const API_URL = `https://api.mercadolibre.com/items/${cart}`;
+      fetch(API_URL)
+      .then((response) => response.json())
+      .then((data) => {
+        const objectLoadCart = {
+          sku: data.id,
+          name: data.title,
+          salePrice: data.price,
+        };
+        const elementOl = document.querySelector('.cart__items');
+        elementOl.appendChild(createCartItemElement(objectLoadCart));
+      });
     });
-  });
-} */
+  }
+  }
 
 function buttonClear() {
   localStorage.clear();
@@ -124,11 +127,11 @@ function buttonClear() {
   li.forEach((element) => element.remove());
 }
 
-window.onload = function onload() { 
+window.onload = function onload() {
   searchItens();
-  // loadCart();
   const buttonElemento = document.querySelector('.items');
-  buttonElemento.addEventListener('click', addObjectCart);
   const elementButtonClear = document.querySelector('.empty-cart');
+  buttonElemento.addEventListener('click', addObjectCart);  
+  loadCart();
   elementButtonClear.addEventListener('click', buttonClear);
 };
