@@ -28,14 +28,34 @@ function getSkuFromProductItem(item) {
   return item.querySelector('span.item__sku').innerText;
 }
 
+function removeValueLocalStorager(id) {
+  const allStorageCart = localStorage.getItem('Product');
+  const cartRemove = (allStorageCart.split(',')).filter((valueCart) => valueCart !== id);
+  localStorage.setItem('Product', cartRemove);
+}
+
 function cartItemClickListener(event) {
+  const id = event.target.innerText.split(' ')[1];
   event.target.remove();
+  console.log(event.target);
+  removeValueLocalStorager(id);
+}
+
+function saveProductStorage(id) {
+  let currentItems = localStorage.getItem('Product');
+  if (currentItems) {
+    currentItems += `,${id}`;
+  } else {
+    currentItems = `${id}`;
+  }
+  localStorage.setItem('Product', currentItems);
 }
 
 function createCartItemElement({ sku, name, salePrice }) {
   const li = document.createElement('li');
   li.className = 'cart__item';
   li.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: $${salePrice}`;
+  saveProductStorage(sku);
   li.addEventListener('click', cartItemClickListener);
   return li;
 }
@@ -80,9 +100,35 @@ function addObjectCart(evento) {
   });
 }
 
+/* function loadCart() {
+  const localSotageCart = localStorage.getItem('Product');
+  localSotageCart.split(',').forEach((cart) => {
+    const API_URL = `https://api.mercadolibre.com/items/${cart}`;
+    fetch(API_URL)
+    .then((response) => response.json())
+    .then((data) => {
+      const objectCart = {
+        sku: data.id,
+        name: data.title,
+        salePrice: data.price,
+      };
+      const elementOl = document.querySelector('.cart__items');
+      elementOl.appendChild(createCartItemElement(objectCart));
+    });
+  });
+} */
+
+function buttonClear() {
+  localStorage.clear();
+  const li = document.querySelectorAll('.cart__item');
+  li.forEach((element) => element.remove());
+}
+
 window.onload = function onload() { 
   searchItens();
+  // loadCart();
   const buttonElemento = document.querySelector('.items');
-  console.log(buttonElemento);
   buttonElemento.addEventListener('click', addObjectCart);
+  const elementButtonClear = document.querySelector('.empty-cart');
+  elementButtonClear.addEventListener('click', buttonClear);
 };

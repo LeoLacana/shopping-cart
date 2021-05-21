@@ -74,3 +74,9 @@
   font-size: 16pt;
   text-align: center;
 }
+
+.total-price {
+  padding-right: 40px;
+  margin: 10px 0;
+  font-size: 18px;
+}
