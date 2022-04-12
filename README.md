@@ -12,7 +12,7 @@ Nesse projeto foi fei um **carrinho de compras** totalmente dinâmico! E o melho
 
 ### Protótipo do projeto
 
-Printo do Projeto Pronto em breve...
+Print do Projeto Pronto em breve...
 
 ## Linter
 
